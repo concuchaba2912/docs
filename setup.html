@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OLED Deauther - Setup</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">OLED Deauther</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="features.html">Features</a></li>
+        <li><a href="setup.html" class="active">Setup</a></li>
+        <li><a href="usage.html">Usage</a></li>
+        <li><a href="index.html#author" class="scroll-link">About Author</a></li>
+      </ul>
+      <button class="theme-toggle" aria-label="Toggle theme">🌙</button>
+    </div>
+  </nav>
+
+  <section class="setup">
+    <div class="container">
+      <h1>Setup Guide</h1>
+      <h2>Hardware Requirements</h2>
+      <ul>
+        <li>AmebaD BW16 (RTL8720DN) board</li>
+        <li>0.96-inch OLED display (128x64, SSD1306, I2C address 0x3C)</li>
+        <li>Three push buttons (UP: PA12, DOWN: PA27, OK: PA13)</li>
+        <li>RGB LED (blue channel: PA14)</li>
+        <li>USB cable for programming</li>
+      </ul>
+
+      <h2>Software Setup</h2>
+      <ol>
+        <li><strong>Install Arduino IDE</strong>: Download and install the latest version from <a href="https://www.arduino.cc/en/software" target="_blank">arduino.cc</a>.</li>
+        <li><strong>Add AmebaD Board</strong>: In Arduino IDE, go to <code>File > Preferences</code>, add the Realtek AmebaD board URL: <code>https://github.com/ambiot/ambd_micropython/raw/main/Arduino/package_realtek.com_amebad_index.json</code>. Then, in <code>Tools > Board > Boards Manager</code>, install <code>AmebaD by Realtek</code> (version 3.1.8).</li>
+        <li><strong>Install Libraries</strong>: In <code>Sketch > Include Library > Manage Libraries</code>, install:
+          <ul>
+            <li><code>Adafruit_GFX</code></li>
+            <li><code>Adafruit_SSD1306</code></li>
+          </ul>
+          Place AmebaD WiFi libraries (<code>wifi_conf.h</code>, <code>wifi_cust_tx.h</code>, <code>wifi_util.h</code>, <code>wifi_structures.h</code>) in your project folder or library path.
+        </li>
+        <li><strong>Configure Board</strong>: Select <code>Ameba RTL8720DN (BW16)</code> in <code>Tools > Board</code>. Set port to your BW16’s USB port.</li>
+      </ol>
+
+      <h2>Upload Code</h2>
+      <p>Copy the <a href="https://github.com/nguyenhoang/oled_deauther" target="_blank">project code</a> into Arduino IDE, save as <code>oled_deauther.ino</code>, and click <code>Upload</code>. Monitor progress in the Serial Monitor (115200 baud).</p>
+
+      <h2>Troubleshooting</h2>
+      <p>If the OLED is blank, verify I2C wiring and address (0x3C). For compilation errors, ensure libraries are installed and board package is up-to-date. The <code>SPI_MODE0</code> warning is harmless but can be suppressed by commenting out <code>#define SPI_MODE0</code> in <code>Adafruit_SPIDevice.h</code>.</p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 OLED Deauther. Created by Nguyen Hoang.</p>
+    </div>
+  </footer>
+
+  <script src="scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OLED Deauther - Usage</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo">OLED Deauther</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="features.html">Features</a></li>
+        <li><a href="setup.html">Setup</a></li>
+        <li><a href="usage.html" class="active">Usage</a></li>
+        <li><a href="index.html#author" class="scroll-link">About Author</a></li>
+      </ul>
+      <button class="theme-toggle" aria-label="Toggle theme">🌙</button>
+    </div>
+  </nav>
+
+  <section class="usage">
+    <div class="container">
+      <h1>Usage Guide</h1>
+      <h2>Navigating the Menu</h2>
+      <p>Use the three buttons to interact with the OLED Deauther:</p>
+      <ul>
+        <li><strong>UP (PA12)</strong>: Scroll up through menu options or increase settings.</li>
+        <li><strong>DOWN (PA27)</strong>: Scroll down through menu options or decrease settings.</li>
+        <li><strong>OK (PA13)</strong>: Select an option or confirm an action.</li>
+      </ul>
+      <p>The main menu includes 10 options: Attack, Scan WiFi, Select WiFi, Information, Version, Settings, Reset, Turn Off, Packet Monitor, and Tetris Game. Navigate with UP/DOWN and select with OK. The menu features smooth animations (zoom, glowing borders, fade transitions).</p>
+
+      <h2>Playing Tetris</h2>
+      <p>Select “Tetris Game” from the main menu to start. The game runs in portrait mode on a 10x20 grid (50x60 pixels):</p>
+      <ul>
+        <li><strong>Controls</strong>:
+          <ul>
+            <li><strong>UP</strong>: Rotate the tetromino clockwise (e.g., I-shape from horizontal to vertical).</li>
+            <li><strong>DOWN</strong>: Drop the tetromino faster (soft drop).</li>
+            <li><strong>OK</strong>: Move the tetromino left (hold for continuous movement).</li>
+            <li><strong>Long OK press (1s)</strong>: Exit to the main menu.</li>
+            <li><strong>OK (Game Over)</strong>: Restart the game.</li>
+          </ul>
+        </li>
+        <li><strong>Gameplay</strong>: Tetrominoes fall every 500ms. Clear full rows to score 10 points per line. The game ends when a new piece cannot spawn. A glowing effect highlights the active piece.</li>
+      </ul>
+
+      <h2>Using Packet Monitor</h2>
+      <p>Select “Packet Monitor” to visualize WiFi activity:</p>
+      <ul>
+        <li>View a 128x40 oscilloscope waveform showing APs per second.</li>
+        <li>Stats include current channel, APs/s, and total packets.</li>
+        <li>Use UP/DOWN to switch channels (1-13 for 2.4GHz, 36-165 for 5GHz).</li>
+        <li>Press OK to exit.</li>
+      </ul>
+
+      <h2>Performing WiFi Attacks</h2>
+      <p><strong>Legal Warning</strong>: Only use on authorized networks. Unauthorized use may violate laws.</p>
+      <ul>
+        <li>Select “Attack” to choose from Single Deauth, All Deauth, Beacon, or Beacon+Deauth.</li>
+        <li>Use “Scan WiFi” to detect networks, then “Select WiFi” to choose a target.</li>
+        <li>Press OK to start/stop an attack. The UI shows progress with animated dots.</li>
+      </ul>
+
+      <h2>Settings</h2>
+      <p>In “Settings”, adjust:</p>
+      <ul>
+        <li><strong>Per Deauth</strong>: Number of deauth packets per attack (1-20).</li>
+        <li><strong>LED RGB</strong>: Toggle the blue LED (PA14) on/off.</li>
+        <li><strong>Language</strong>: Switch between English and Vietnamese.</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2025 OLED Deauther. Created by Nguyen Hoang.</p>
+    </div>
+  </footer>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
